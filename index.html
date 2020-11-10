@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2 Assignment</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/design-system/2.9.4/styles/salesforce-lightning-design-system.min.css ">
+  <link rel="stylesheet" href="style.css" />
+  <script src="index.js"></script>
+</head>
+<body>
+<!-- header -->
+<div class="header slds-p-horizontal_large slds-p-vertical_large">
+     <div class="slds-grid slds-wrap ">
+       
+        
+         <div class="toggle-btn large-hide slds-m-top_medium slds-small-size_1-of-8" onclick="toggleSidebar() ">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+        </div> 
+        <div class="slds-col  slds-large-size_9-of-12 slds-small-size_5-of-8">      
+            <span class="slds-m-left_medium"><img src="logo.jpg" height="70px" width="70px"/></span>
+            
+        </div>
+        <div class="slds-col  slds-large-size_3-of-12 slds-small-size_2-of-8">
+            <div class="slds-grid slds-wrap ">
+                <div class="slds-col slds-m-top_medium  slds-large-size_1-of-4 small-hide">
+                    <span >Dashboard</span>
+                </div>
+                <div class="slds-col slds-m-top_small slds-large-size_3-of-4">
+                    <span class="slds-small-size_1-of-2 slds-m-left_medium"><img src="bell-icon.png" height="30px" width="30px"></span>
+                    <span class="slds-small-size_1-of-2 slds-m-left_medium"><img src="account-icon.png" height="30px" width="30px"></span>
+                    <span class="small-hide slds-m-left_small">Taniya Thomas</span>
+                    <span class="small-hide slds-m-left_small"><img src="chevrondown.png" height="20px" width="20px"/></span>
+                   
+                </div>
+               
+            </div>
+        </div>  
+    </div> 
+</div>
+<div class="container">
+<!-- side bar -->
+<div id="sidebar">
+   
+    <nav class="slds-nav-vertical" aria-label="Sub page">
+        <div class="slds-nav-vertical__section slds-p-horizontal_medium slds-p-vertical_medium">
+        <h2 id="entity-header" class="slds-nav-vertical__title">SUMMARY</h2>
+        <ul aria-describedby="entity-header">
+        <li class="slds-nav-vertical__item slds-p-top_medium text-color">
+        <a href="javascript:void(0);" class="slds-nav-vertical__action">Account Summary</a>
+        </li>
+        </ul>
+    </div>
+    <div class="slds-nav-vertical__section slds-p-horizontal_medium slds-p-vertical_medium">
+        <h2 id="folder-header" class="slds-nav-vertical__title">INVESTMENTS</h2>
+        <ul aria-describedby="folder-header">
+        <li class="slds-nav-vertical__item slds-p-top_medium text-color">
+        <a href="javascript:void(0);" class="slds-nav-vertical__action">My Investments</a>
+        </li>
+        <li class="slds-nav-vertical__item slds-is-active text-color">
+        <a href="javascript:void(0);" class="slds-nav-vertical__action" >Investor List</a>
+        </li>
+        </ul>
+    </div>
+    <div class="slds-nav-vertical__section slds-p-horizontal_medium slds-p-vertical_medium">
+        <h2 id="folder-header" class="slds-nav-vertical__title">TRANSACTIONS</h2>
+        <ul aria-describedby="folder-header">
+        <li class="slds-nav-vertical__item slds-p-top_medium text-color">
+        <a href="javascript:void(0);" class="slds-nav-vertical__action">My Transactions</a>
+        </li>
+        </ul>
+    </div>
+    <div class="slds-nav-vertical__section slds-p-horizontal_medium slds-p-vertical_medium">
+        <h2 id="folder-header" class="slds-nav-vertical__title">DELEGATE</h2>
+        <ul aria-describedby="folder-header">
+        <li class="slds-nav-vertical__item slds-p-top_medium text-color">
+        <a href="javascript:void(0);" class="slds-nav-vertical__action">My Delegate</a>
+        </li>
+        </ul>
+    </div>
+    <div class="footer slds-m-top_xx-large slds-p-top_xx-large">
+        <span class="text-color">© 2019 ROCX. All Rights Reserved. </span>
+    </div>
+    </nav>
+
+</div>
+
+<!-- body -->
+  
+<div class="slds-box slds-theme_shade slds-p-horizontal_xx-large slds-p-vertical_xx-large outline-box">
+   
+<!-- second-nav-->
+    <div class="second-nav small-hide">
+        <div class="slds-grid slds-wrap slds-p-horizontal_large slds-p-vertical_large below-nav slds-theme_shade">
+            <div class="slds-col  slds-large-size_3-of-12 slds-p-left_medium slds-p-vertical_medium ">
+                <h1 class="text-font">Investor List</h1>
+            </div>
+            <div class="slds-col  slds-large-size_3-of-12 slds-p-left_medium slds-p-vertical_medium ">
+                <div class="slds-form-element">
+                    <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+                      <input type="text" id="text-input-id-1" placeholder="Search by name or email......" class="slds-input text-color" />
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col  slds-large-size_2-of-12 slds-p-left_medium slds-p-vertical_medium ">
+                <div class="slds-form-element">
+                   
+                    <div class="slds-form-element__control">
+                    <div class="slds-combobox_container slds-size_x-small">
+                    <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+                    <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                    <input type="text" class="slds-input slds-combobox__input" id="combobox-id-1" aria-controls="listbox-id-1" autocomplete="off" role="textbox" placeholder="Both"  />
+                    <span class="slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right">
+                    <img src="dropdown.jpg" />
+                    </span>
+                    </div>
+                    
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+            </div>
+            <div class="slds-col  slds-large-size_1-of-12 slds-p-left_medium slds-p-vertical_medium ">
+                <div class="slds-form-element">
+                   
+                    <div class="slds-form-element__control">
+                    <div class="slds-combobox_container slds-size_xx-small">
+                    <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click" aria-expanded="false" aria-haspopup="listbox" role="combobox">
+                    <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none">
+                    <input type="text" class="slds-input slds-combobox__input" id="combobox-id-1" aria-controls="listbox-id-1" autocomplete="off" role="textbox" placeholder="All" />
+                    <span class="slds-icon_container slds-icon-utility-down slds-input__icon slds-input__icon_right">
+                    <img src="dropdown.jpg"/>
+                    </span>
+                    </div>
+                    
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+            </div>
+            <div class="slds-col  slds-large-size_3-of-12 slds-p-left_medium slds-p-vertical_medium ">
+                <!-- <span><a href="" onclick="toggle_menu()"><img src="menu-box.png" height="30px" width="30px"/></a></span> -->
+                <button  onclick="toggle_menu()"><img src="menu-box.png" height="30px" width="30px"></button>
+                <button class="slds-m-left_small"><img src="hamburger.png" height="30px" width="30px"/></button>
+                <button class="slds-m-horizontal_small"><img src="download.png" height="30px" width="30px"/></button>
+                
+            </div>
+            
+
+            
+        </div>   
+    </div>
+<div class="subbox slds-m-horizontal_large slds-m-vertical_large" id="mobile-menu">        
+
+<div class="header-bottom slds-show_small text-color ">
+   <div class="slds-grid slds-wrap ">
+            <div class="slds-col  slds-large-size_2-of-6 slds-p-left_medium slds-p-vertical_medium ">
+                <span class="slds-p-left_xx-large slds-m-left_xx-large ">Name</span>
+            </div>
+            <div class="slds-col  slds-large-size_1-of-6 slds-p-horizontal_medium slds-p-vertical_medium">
+                <span>Total Contribution</span>
+            </div>
+            <div class="slds-col   slds-large-size_1-of-6 slds-p-horizontal_medium slds-p-vertical_medium ">
+                <span>Total Distributions</span>
+            </div>
+             <div class="slds-col   slds-large-size_1-of-6 slds-p-horizontal_medium slds-p-vertical_medium ">
+                <span>Total Balance</span>
+            </div>
+            <div class="slds-col  slds-large-size_1-of-6 slds-p-horizontal_medium slds-p-vertical_medium ">
+                <span>Details</span>
+            </div>
+    </div>  
+    
+</div>
+
+<div class="body">
+    <!-- card 1-->
+    <div class="slds-wrap slds-m-horizontal_medium" id="main-menu">
+        <div class="change"> 
+            <article class="slds-card card-margin"> 
+                <div class="slds-grid slds-wrap check">
+                   
+                    <div class="slds-col slds-size_1-of-1  slds-medium-size_1-of-1 slds-large-size_2-of-6 slds-p-horizontal_large slds-p-vertical_medium check-2">
+                        <div>
+                        <span class="slds-m-horizontal_large slds-m-vertical_large "><img src="img1.jpg" class=" row-img" /></span>  
+                        
+                        <br class="slds-hide_large"/>  
+                        <span class="left-align">Ivan Maghelis</span>
+                        <br/>
+                        <span class="slds-hide_small text-color">ivan@gmail.com</span>
+                        </div>
+                                    
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large check-2" >
+                        <div>
+                        <span class="text-color slds-hide_small">Total_contribution</span>
+                        <br/>
+                         <span class="left-align">$ 821,243</span>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large slds-m-vertical_medium smallhide" >
+                      
+                        <span >$ 821,243</span>
+                    </div>
+                     <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large slds-m-vertical_medium  smallhide ">
+                        <span >$ 821,243</span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large slds-m-vertical_small smallhide ">
+                        <span><img src="share_mobile_60.png" class="icon-view"/></span>
+                        <span>View More</span>
+                        <span class="slds-m-horizontal_medium"><button class="slds-button">...</button></span>
+                    </div>
+                    
+                    </div>  
+                
+                    <footer class="slds-card__footer slds-hide_small">
+                        <a class="slds-card__footer-action" href="javascript:void(0);">View Details
+                            <span class="slds-assistive-text">Accounts</span>
+                        </a>
+                    </footer> 
+            </article>  
+            </div>
+  
+    <!--Card 2-->  
+    <div class="change"> 
+        <article class="slds-card card-margin"> 
+            <div class="slds-grid slds-wrap check">
+               
+                <div class="slds-col slds-size_1-of-1  slds-medium-size_1-of-1 slds-large-size_2-of-6 slds-p-horizontal_large slds-p-vertical_medium check-2">
+                    <div>
+                    <span class="slds-m-horizontal_large slds-m-vertical_large "><img src="img2.jpg" class=" row-img" /></span>  
+                    
+                    <br class="slds-hide_large"/>  
+                    <span class="left-align">Rayaon Jacob</span>
+                    <br/>
+                    <span class="slds-hide_small text-color">rayaon@gmail.com</span>
+                    </div>
+                                
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large check-2" >
+                    <div>
+                    <span class="text-color slds-hide_small">Total_contribution</span>
+                    <br/>
+                     <span class="left-align">$ 821,243</span>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large slds-m-vertical_medium smallhide" >
+                  
+                    <span >$ 821,243</span>
+                </div>
+                 <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large slds-m-vertical_medium  smallhide ">
+                    <span >$ 821,243</span>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large slds-m-vertical_small smallhide ">
+                    <span><img src="share_mobile_60.png" class="icon-view"/></span>
+                    <span>View More</span>
+                    <span class="slds-m-horizontal_medium"><button class="slds-button">...</button></span>
+                </div>
+                
+                </div>  
+            
+                <footer class="slds-card__footer slds-hide_small">
+                    <a class="slds-card__footer-action" href="javascript:void(0);">View Details
+                        <span class="slds-assistive-text">Accounts</span>
+                    </a>
+                </footer> 
+        </article>  
+        </div>
+      
+       <!--Card 3 -->  
+       <div class="change"> 
+        <article class="slds-card card-margin"> 
+            <div class="slds-grid slds-wrap check">
+               
+                <div class="slds-col slds-size_1-of-1  slds-medium-size_1-of-1 slds-large-size_2-of-6 slds-p-horizontal_large slds-p-vertical_medium check-2">
+                    <div>
+                    <span class="slds-m-horizontal_large slds-m-vertical_large "><img src="img3.jpg" class=" row-img" /></span>  
+                    
+                    <br class="slds-hide_large"/>  
+                    <span class="left-align">Alex Raison</span>
+                    <br/>
+                    <span class="slds-hide_small text-color">alex23@gmail.com</span>
+                    </div>
+                                
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large check-2" >
+                    <div>
+                    <span class="text-color slds-hide_small">Total_contribution</span>
+                    <br/>
+                     <span class="left-align">$ 821,243</span>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large slds-m-vertical_medium smallhide" >
+                  
+                    <span >$ 821,243</span>
+                </div>
+                 <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large slds-m-vertical_medium  smallhide ">
+                    <span >$ 821,243</span>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large slds-m-vertical_small smallhide ">
+                    <span><img src="share_mobile_60.png" class="icon-view"/></span>
+                    <span>View More</span>
+                    <span class="slds-m-horizontal_medium"><button class="slds-button">...</button></span>
+                </div>
+                
+                </div>  
+            
+                <footer class="slds-card__footer slds-hide_small">
+                    <a class="slds-card__footer-action" href="javascript:void(0);">View Details
+                        <span class="slds-assistive-text">Accounts</span>
+                    </a>
+                </footer> 
+        </article>  
+        </div>
+      
+           <!--Card 4 -->  
+           <div class="change"> 
+            <article class="slds-card card-margin"> 
+                <div class="slds-grid slds-wrap check">
+                   
+                    <div class="slds-col slds-size_1-of-1  slds-medium-size_1-of-1 slds-large-size_2-of-6 slds-p-horizontal_large slds-p-vertical_medium check-2">
+                        <div>
+                        <span class="slds-m-horizontal_large slds-m-vertical_large "><img src="img4.jpg" class=" row-img" /></span>  
+                        
+                        <br class="slds-hide_large"/>  
+                        <span class="left-align">Harry Willson</span>
+                        <br/>
+                        <span class="slds-hide_small text-color">harry@gmail.com</span>
+                        </div>
+                                    
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large check-2" >
+                        <div>
+                        <span class="text-color slds-hide_small">Total_contribution</span>
+                        <br/>
+                         <span class="left-align">$ 821,243</span>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large slds-m-vertical_medium smallhide" >
+                      
+                        <span >$ 821,243</span>
+                    </div>
+                     <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large slds-m-vertical_medium  smallhide ">
+                        <span >$ 821,243</span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large slds-m-vertical_small smallhide ">
+                        <span><img src="share_mobile_60.png" class="icon-view"/></span>
+                        <span>View More</span>
+                        <span class="slds-m-horizontal_medium"><button class="slds-button">...</button></span>
+                    </div>
+                    
+                    </div>  
+                
+                    <footer class="slds-card__footer slds-hide_small">
+                        <a class="slds-card__footer-action" href="javascript:void(0);">View Details
+                            <span class="slds-assistive-text">Accounts</span>
+                        </a>
+                    </footer> 
+            </article>  
+            </div>
+          
+     <!--Card 5 --> 
+     <div class="change"> 
+        <article class="slds-card card-margin"> 
+            <div class="slds-grid slds-wrap check">
+               
+                <div class="slds-col slds-size_1-of-1  slds-medium-size_1-of-1 slds-large-size_2-of-6 slds-p-horizontal_large slds-p-vertical_medium check-2">
+                    <div>
+                    <span class="slds-m-horizontal_large slds-m-vertical_large "><img src="img5.jpg" class=" row-img" /></span>  
+                    
+                    <br class="slds-hide_large"/>  
+                    <span class="left-align">Loren Samuel</span>
+                    <br/>
+                    <span class="slds-hide_small text-color">samuell@gmail.com</span>
+                    </div>
+                                
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large check-2" >
+                    <div>
+                    <span class="text-color slds-hide_small">Total_contribution</span>
+                    <br/>
+                     <span class="left-align">$ 821,243</span>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large slds-m-vertical_medium smallhide" >
+                  
+                    <span >$ 821,243</span>
+                </div>
+                 <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large slds-m-vertical_medium  smallhide ">
+                    <span >$ 821,243</span>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large slds-m-vertical_small smallhide ">
+                    <span><img src="share_mobile_60.png" class="icon-view"/></span>
+                    <span>View More</span>
+                    <span class="slds-m-horizontal_medium"><button class="slds-button">...</button></span>
+                </div>
+                
+                </div>  
+            
+                <footer class="slds-card__footer slds-hide_small">
+                    <a class="slds-card__footer-action" href="javascript:void(0);">View Details
+                        <span class="slds-assistive-text">Accounts</span>
+                    </a>
+                </footer> 
+        </article>  
+        </div>
+      
+    <!-- card 6 -->
+    <div class="change"> 
+        <article class="slds-card card-margin"> 
+            <div class="slds-grid slds-wrap check">
+               
+                <div class="slds-col slds-size_1-of-1  slds-medium-size_1-of-1 slds-large-size_2-of-6 slds-p-horizontal_large slds-p-vertical_medium check-2">
+                    <div>
+                    <span class="slds-m-horizontal_large slds-m-vertical_large "><img src="img1.jpg" class=" row-img" /></span>  
+                    
+                    <br class="slds-hide_large"/>  
+                    <span class="left-align">Marry James</span>
+                    <br/>
+                    <span class="slds-hide_small text-color">marry@gmail.com</span>
+                    </div>
+                                
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large check-2" >
+                    <div>
+                    <span class="text-color slds-hide_small">Total_contribution</span>
+                    <br/>
+                     <span class="left-align">$ 821,243</span>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large slds-m-vertical_medium smallhide" >
+                  
+                    <span >$ 821,243</span>
+                </div>
+                 <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large slds-m-vertical_medium  smallhide ">
+                    <span >$ 821,243</span>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large slds-m-vertical_small smallhide ">
+                    <span><img src="share_mobile_60.png" class="icon-view"/></span>
+                    <span>View More</span>
+                    <span class="slds-m-horizontal_medium"><button class="slds-button">...</button></span>
+                </div>
+                
+                </div>  
+            
+                <footer class="slds-card__footer slds-hide_small">
+                    <a class="slds-card__footer-action" href="javascript:void(0);">View Details
+                        <span class="slds-assistive-text">Accounts</span>
+                    </a>
+                </footer> 
+        </article>  
+        </div>
+      
+  
+    <!--Card 7 --> 
+    <div class="change"> 
+        <article class="slds-card card-margin"> 
+            <div class="slds-grid slds-wrap check">
+               
+                <div class="slds-col slds-size_1-of-1  slds-medium-size_1-of-1 slds-large-size_2-of-6 slds-p-horizontal_large slds-p-vertical_medium check-2">
+                    <div>
+                    <span class="slds-m-horizontal_large slds-m-vertical_large "><img src="img2.jpg" class=" row-img" /></span>  
+                    
+                    <br class="slds-hide_large"/>  
+                    <span class="left-align">Shameron John</span>
+                    <br/>
+                    <span class="slds-hide_small text-color">jhon_shan@gmail.com</span>
+                    </div>
+                                
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large check-2" >
+                    <div>
+                    <span class="text-color slds-hide_small">Total_contribution</span>
+                    <br/>
+                     <span class="left-align">$ 821,243</span>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large slds-m-vertical_medium smallhide" >
+                  
+                    <span >$ 821,243</span>
+                </div>
+                 <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large slds-m-vertical_medium  smallhide ">
+                    <span >$ 821,243</span>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large slds-m-vertical_small smallhide ">
+                    <span><img src="share_mobile_60.png" class="icon-view"/></span>
+                    <span>View More</span>
+                    <span class="slds-m-horizontal_medium"><button class="slds-button">...</button></span>
+                </div>
+                
+                </div>  
+            
+                <footer class="slds-card__footer slds-hide_small">
+                    <a class="slds-card__footer-action" href="javascript:void(0);">View Details
+                        <span class="slds-assistive-text">Accounts</span>
+                    </a>
+                </footer> 
+        </article>  
+        </div>
+      
+    <!-- card 8 -->
+    <div class="change"> 
+        <article class="slds-card card-margin"> 
+            <div class="slds-grid slds-wrap check">
+               
+                <div class="slds-col slds-size_1-of-1  slds-medium-size_1-of-1 slds-large-size_2-of-6 slds-p-horizontal_large slds-p-vertical_medium check-2">
+                    <div>
+                    <span class="slds-m-horizontal_large slds-m-vertical_large "><img src="img3.jpg" class=" row-img" /></span>  
+                    
+                    <br class="slds-hide_large"/>  
+                    <span class="left-align">Angel Disuza </span>
+                    <br/>
+                    <span class="slds-hide_small text-color">angel_123@gmail.com</span>
+                    </div>
+                                
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large check-2" >
+                    <div>
+                    <span class="text-color slds-hide_small">Total_contribution</span>
+                    <br/>
+                     <span class="left-align">$ 821,243</span>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large slds-m-vertical_medium smallhide" >
+                  
+                    <span >$ 821,243</span>
+                </div>
+                 <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large slds-m-vertical_medium  smallhide ">
+                    <span >$ 821,243</span>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-6 slds-p-horizontal_large slds-p-vertical_large slds-m-vertical_small smallhide ">
+                    <span><img src="share_mobile_60.png" class="icon-view"/></span>
+                    <span>View More</span>
+                    <span class="slds-m-horizontal_medium"><button class="slds-button">...</button></span>
+                </div>
+                
+                </div>  
+            
+                <footer class="slds-card__footer slds-hide_small">
+                    <a class="slds-card__footer-action" href="javascript:void(0);">View Details
+                        <span class="slds-assistive-text">Accounts</span>
+                    </a>
+                </footer> 
+        </article>  
+        </div>
+      
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>    
